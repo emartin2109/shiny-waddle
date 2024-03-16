@@ -1,0 +1,246 @@
+country, score
+Andorra, 42.546245
+United Arab Emirates, 23.424076
+Afghanistan, 33.93911
+Antigua and Barbuda, 17.060816
+Anguilla, 18.220554
+Albania, 41.153332
+Armenia, 40.069099
+Netherlands Antilles, 12.226079
+Angola, -11.202692
+Antarctica, -75.250973
+Argentina, -38.416097
+American Samoa, -14.270972
+Austria, 47.516231
+Australia, -25.274398
+Aruba, 12.52111
+Azerbaijan, 40.143105
+Bosnia and Herzegovina, 43.915886
+Barbados, 13.193887
+Bangladesh, 23.684994
+Belgium, 50.503887
+Burkina Faso, 12.238333
+Bulgaria, 42.733883
+Bahrain, 25.930414
+Burundi, -3.373056
+Benin, 9.30769
+Bermuda, 32.321384
+Brunei, 4.535277
+Bolivia, -16.290154
+Brazil, -14.235004
+Bahamas, 25.03428
+Bhutan, 27.514162
+Bouvet Island, -54.423199
+Botswana, -22.328474
+Belarus, 53.709807
+Belize, 17.189877
+Canada, 56.130366
+Cocos [Keeling] Islands, -12.164165
+Congo [DRC], -4.038333
+Central African Republic, 6.611111
+Congo [Republic], -0.228021
+Switzerland, 46.818188
+Côte d'Ivoire, 7.539989
+Cook Islands, -21.236736
+Chile, -35.675147
+Cameroon, 7.369722
+China, 35.86166
+Colombia, 4.570868
+Costa Rica, 9.748917
+Cuba, 21.521757
+Cape Verde, 16.002082
+Christmas Island, -10.447525
+Cyprus, 35.126413
+Czech Republic, 49.817492
+Germany, 51.165691
+Djibouti, 11.825138
+Denmark, 56.26392
+Dominica, 15.414999
+Dominican Republic, 18.735693
+Algeria, 28.033886
+Ecuador, -1.831239
+Estonia, 58.595272
+Egypt, 26.820553
+Western Sahara, 24.215527
+Eritrea, 15.179384
+Spain, 40.463667
+Ethiopia, 9.145
+Finland, 61.92411
+Fiji, -16.578193
+Falkland Islands [Islas Malvinas], -51.796253
+Micronesia, 7.425554
+Faroe Islands, 61.892635
+France, 46.227638
+Gabon, -0.803689
+United Kingdom, 55.378051
+Grenada, 12.262776
+Georgia, 42.315407
+French Guiana, 3.933889
+Guernsey, 49.465691
+Ghana, 7.946527
+Gibraltar, 36.137741
+Greenland, 71.706936
+Gambia, 13.443182
+Guinea, 9.945587
+Guadeloupe, 16.995971
+Equatorial Guinea, 1.650801
+Greece, 39.074208
+South Georgia and the South Sandwich Islands, -54.429579
+Guatemala, 15.783471
+Guam, 13.444304
+Guinea-Bissau, 11.803749
+Guyana, 4.860416
+Gaza Strip, 31.354676
+Hong Kong, 22.396428
+Heard Island and McDonald Islands, -53.08181
+Honduras, 15.199999
+Croatia, 45.1
+Haiti, 18.971187
+Hungary, 47.162494
+Indonesia, -0.789275
+Ireland, 53.41291
+Israel, 31.046051
+Isle of Man, 54.236107
+India, 20.593684
+British Indian Ocean Territory, -6.343194
+Iraq, 33.223191
+Iran, 32.427908
+Iceland, 64.963051
+Italy, 41.87194
+Jersey, 49.214439
+Jamaica, 18.109581
+Jordan, 30.585164
+Japan, 36.204824
+Kenya, -0.023559
+Kyrgyzstan, 41.20438
+Cambodia, 12.565679
+Kiribati, -3.370417
+Comoros, -11.875001
+Saint Kitts and Nevis, 17.357822
+North Korea, 40.339852
+South Korea, 35.907757
+Kuwait, 29.31166
+Cayman Islands, 19.513469
+Kazakhstan, 48.019573
+Laos, 19.85627
+Lebanon, 33.854721
+Saint Lucia, 13.909444
+Liechtenstein, 47.166
+Sri Lanka, 7.873054
+Liberia, 6.428055
+Lesotho, -29.609988
+Lithuania, 55.169438
+Luxembourg, 49.815273
+Latvia, 56.879635
+Libya, 26.3351
+Morocco, 31.791702
+Monaco, 43.750298
+Moldova, 47.411631
+Montenegro, 42.708678
+Madagascar, -18.766947
+Marshall Islands, 7.131474
+Macedonia [FYROM], 41.608635
+Mali, 17.570692
+Myanmar [Burma], 21.913965
+Mongolia, 46.862496
+Macau, 22.198745
+Northern Mariana Islands, 17.33083
+Martinique, 14.641528
+Mauritania, 21.00789
+Montserrat, 16.742498
+Malta, 35.937496
+Mauritius, -20.348404
+Maldives, 3.202778
+Malawi, -13.254308
+Mexico, 23.634501
+Malaysia, 4.210484
+Mozambique, -18.665695
+Namibia, -22.95764
+New Caledonia, -20.904305
+Niger, 17.607789
+Norfolk Island, -29.040835
+Nigeria, 9.081999
+Nicaragua, 12.865416
+Netherlands, 52.132633
+Norway, 60.472024
+Nepal, 28.394857
+Nauru, -0.522778
+Niue, -19.054445
+New Zealand, -40.900557
+Oman, 21.512583
+Panama, 8.537981
+Peru, -9.189967
+French Polynesia, -17.679742
+Papua New Guinea, -6.314993
+Philippines, 12.879721
+Pakistan, 30.375321
+Poland, 51.919438
+Saint Pierre and Miquelon, 46.941936
+Pitcairn Islands, -24.703615
+Puerto Rico, 18.220833
+Palestinian Territories, 31.952162
+Portugal, 39.399872
+Palau, 7.51498
+Paraguay, -23.442503
+Qatar, 25.354826
+Réunion, -21.115141
+Romania, 45.943161
+Serbia, 44.016521
+Russia, 61.52401
+Rwanda, -1.940278
+Saudi Arabia, 23.885942
+Solomon Islands, -9.64571
+Seychelles, -4.679574
+Sudan, 12.862807
+Sweden, 60.128161
+Singapore, 1.352083
+Saint Helena, -24.143474
+Slovenia, 46.151241
+Svalbard and Jan Mayen, 77.553604
+Slovakia, 48.669026
+Sierra Leone, 8.460555
+San Marino, 43.94236
+Senegal, 14.497401
+Somalia, 5.152149
+Suriname, 3.919305
+São Tomé and Príncipe, 0.18636
+El Salvador, 13.794185
+Syria, 34.802075
+Swaziland, -26.522503
+Turks and Caicos Islands, 21.694025
+Chad, 15.454166
+French Southern Territories, -49.280366
+Togo, 8.619543
+Thailand, 15.870032
+Tajikistan, 38.861034
+Tokelau, -8.967363
+Timor-Leste, -8.874217
+Turkmenistan, 38.969719
+Tunisia, 33.886917
+Tonga, -21.178986
+Turkey, 38.963745
+Trinidad and Tobago, 10.691803
+Tuvalu, -7.109535
+Taiwan, 23.69781
+Tanzania, -6.369028
+Ukraine, 48.379433
+Uganda, 1.373333
+U.S. Minor Outlying Islands, null
+United States, 37.09024
+Uruguay, -32.522779
+Uzbekistan, 41.377491
+Vatican City, 41.902916
+Saint Vincent and the Grenadines, 12.984305
+Venezuela, 6.42375
+British Virgin Islands, 18.420695
+U.S. Virgin Islands, 18.335765
+Vietnam, 14.058324
+Vanuatu, -15.376706
+Wallis and Futuna, -13.768752
+Samoa, -13.759029
+Kosovo, 42.602636
+Yemen, 15.552727
+Mayotte, -12.8275
+South Africa, -30.559482
+Zambia, -13.133897
+Zimbabwe, -19.015438
