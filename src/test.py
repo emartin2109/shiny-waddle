@@ -6,8 +6,8 @@ import csv
 from config import Config
 
 data_dict = {}
-SCREEN_WIDTH = 1280
-SCREEN_HEIGHT = 720
+SCREEN_WIDTH = 1920
+SCREEN_HEIGHT = 1080
 
 def csv_to_dict(csv_file_path, key_column, value_column):
    result_dict = {}
@@ -19,7 +19,7 @@ def csv_to_dict(csv_file_path, key_column, value_column):
       for row in csv_reader:
          key = row[key_column]
          value = row[value_column]
-         
+
          result_dict[key] = value
 
    return result_dict
@@ -93,10 +93,10 @@ def loop(my_font, country_dict):
       except Exception:
          continue
 
-      screen.fill("purple")
-      question = my_font.render("Wich has more " + random_field + " ?", False, (0, 0, 0))
-      answer1 = my_font.render("1- " + random_country_name1, False, (0, 0, 0))
-      answer2 = my_font.render("2- " + random_country_name2, False, (0, 0, 0))
+      screen.fill((20, 20, 20))
+      question = my_font.render("Wich has more " + random_field + " ?", False, (255, 255, 255))
+      answer1 = my_font.render("1- " + random_country_name1, False, (255, 255, 255))
+      answer2 = my_font.render("2- " + random_country_name2, False, (255, 255, 255))
 
       answer1_pic = None
       answer2_pic = None
@@ -118,12 +118,14 @@ def loop(my_font, country_dict):
 
       answer1_pic = pygame.image.load("image1.png")
       answer2_pic = pygame.image.load("image2.png")
+      answer1_pic = pygame.transform.scale(answer1_pic, (960, 540))
+      answer2_pic = pygame.transform.scale(answer2_pic, (960, 540))
 
       question_rect = question.get_rect(center=(SCREEN_WIDTH/2, 100))
-      answer1_rect = answer1.get_rect(center=(100, SCREEN_HEIGHT * (3/4)))
-      answer2_rect = answer1.get_rect(center=(SCREEN_WIDTH - 200, SCREEN_HEIGHT * (3/4)))
-      answer1_pic_rect = answer1_pic.get_rect(center=(100, SCREEN_HEIGHT * (3/4) - 200))
-      answer2_pic_rect = answer2_pic.get_rect(center=(SCREEN_WIDTH - 200, SCREEN_HEIGHT * (3/4) - 200))
+      answer1_rect = answer1.get_rect(center=(960 / 2, SCREEN_HEIGHT * (3/4)))
+      answer2_rect = answer1.get_rect(center=(960 + 960 / 2, SCREEN_HEIGHT * (3/4)))
+      answer1_pic_rect = answer1_pic.get_rect(center=(960 / 2, SCREEN_HEIGHT * (1/2) - 100))
+      answer2_pic_rect = answer2_pic.get_rect(center=(960 + 960 / 2, SCREEN_HEIGHT * (1/2) - 100))
 
       screen.blit(question, question_rect)
       screen.blit(answer1, answer1_rect)
@@ -143,9 +145,9 @@ def loop(my_font, country_dict):
 for data in Config.DATAS:
    data_dict[data] = csv_to_dict("Datasets/" + data + ".csv", "country", "score")
 
-pygame.font.init() # you have to call this at the start, 
+pygame.font.init() # you have to call this at the start,
                    # if you want to use this module.
-my_font = pygame.font.SysFont('Comic Sans MS', 30)
+my_font = pygame.font.Font('Assets/Dosis-Bold.ttf', 50)
 country_dict = csv_to_dict("Datasets/Countries.csv", "c1", "c2")
 
 loop(my_font, country_dict)
