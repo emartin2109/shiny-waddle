@@ -48,7 +48,7 @@ def check_invert_choice(random_country_data1, random_country_data2, i, choice):
 
 def loop(my_font, country_dict):
    pygame.init()
-   screen = pygame.display.set_mode((1280, 720))
+   screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
    clock = pygame.time.Clock()
    running = True
    new = True
@@ -66,7 +66,7 @@ def loop(my_font, country_dict):
       for event in pygame.event.get():
          if event.type == pygame.QUIT:
             running = False
-         
+
          if event.type == pygame.MOUSEBUTTONDOWN:
             if (answer1_pic_rect.collidepoint(event.pos)):
                new = True
