@@ -15,8 +15,6 @@ The random datasets are:
 - Population
 - Latitude
 - Longitude
-- Battles Won
-- Battles Lost
 - IQ
 - Scolarship
 
@@ -29,11 +27,15 @@ The random datasets are:
 - Corruption
 - Crimes
 - Murder
-- Faith
+- Atheism
 - Terrorism
 - Guns
 - Obesity
 - Depression
 - Suicide
-- Canibalism
 - Depts
+- Racism
+- Homophobia
+- Mysogynia
+- Sex selling prices
+- War crimes
