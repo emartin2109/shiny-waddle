@@ -225,6 +225,8 @@ def loop(my_font, country_dict):
             random_country_name2, random_country_data2 = random.choice(list(data_dict[random_field].items()))
             country_dict[random_country_name1]
             country_dict[random_country_name2]
+            if random_country_name1 == random_country_name2:
+               continue
             break
          except Exception as e:
             continue
