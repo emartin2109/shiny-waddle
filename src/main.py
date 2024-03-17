@@ -1,7 +1,9 @@
 import requests
 import random
 import pygame
+import pygame.gfxdraw
 import csv
+import time
 
 from config import Config
 
@@ -19,7 +21,7 @@ def csv_to_dict(csv_file_path, key_column, value_column):
       for row in csv_reader:
          key = row[key_column]
          value = float(row[value_column])
-         
+
          result_dict[key] = value
 
    return result_dict
@@ -34,32 +36,94 @@ def csv_to_dict_spe(csv_file_path, key_column, value_column):
       for row in csv_reader:
          key = row[key_column]
          value = row[value_column]
-         
+
          result_dict[key] = value
 
    return result_dict
+def draw_rounded_rect(surface, rect, color, corner_radius):
+    pygame.draw.rect(surface, color, rect.inflate(-2*corner_radius, 0))
+    pygame.draw.rect(surface, color, rect.inflate(0, -2*corner_radius))
+    pygame.gfxdraw.aacircle(surface, rect.left+corner_radius, rect.top+corner_radius, corner_radius, color)
+    pygame.gfxdraw.filled_circle(surface, rect.left+corner_radius, rect.top+corner_radius, corner_radius, color)
+    pygame.gfxdraw.aacircle(surface, rect.right-corner_radius-1, rect.top+corner_radius, corner_radius, color)
+    pygame.gfxdraw.filled_circle(surface, rect.right-corner_radius-1, rect.top+corner_radius, corner_radius, color)
+    pygame.gfxdraw.aacircle(surface, rect.left+corner_radius, rect.bottom-corner_radius-1, corner_radius, color)
+    pygame.gfxdraw.filled_circle(surface, rect.left+corner_radius, rect.bottom-corner_radius-1, corner_radius, color)
+    pygame.gfxdraw.aacircle(surface, rect.right-corner_radius-1, rect.bottom-corner_radius-1, corner_radius, color)
+    pygame.gfxdraw.filled_circle(surface, rect.right-corner_radius-1, rect.bottom-corner_radius-1, corner_radius, color)
 
-def check_choice(random_country_data1, random_country_data2, i, choice):
-   if choice == 1 and random_country_data1 > random_country_data2:
-       print("Youre right!", random_country_data1, random_country_data2)
-   elif choice == 2 and random_country_data1 < random_country_data2:
-       print("Youre right!", random_country_data1, random_country_data2)
-   elif random_country_data2 == random_country_data1:
-       print("Both are equals!")
-   else:
-       print("Rip bozo youre wrong!, Youre streak is:", i, random_country_data1, random_country_data2)
-       exit()
+def guess(text, screen, color, random_country_data1, random_country_data2, choice, correct):
+    answer = my_font.render(text, False, color)
+    answer_rect = answer.get_rect(center=(SCREEN_WIDTH/2, SCREEN_HEIGHT * 3/4 + 100))
+    rect_1 = pygame.Rect(0, 0, 0, 0)
+    rect_2 = pygame.Rect(0, 0, 0, 0)
+    temp_rect_1_size = 0
+    temp_rect_2_size = 0
+    rect_1_size = (float(random_country_data1) / ((float(random_country_data1) + 0.001) + float(random_country_data2))) * SCREEN_HEIGHT / 2
+    rect_2_size = (float(random_country_data2) / ((float(random_country_data1) + 0.001) + float(random_country_data2))) * SCREEN_HEIGHT / 2
+    trans_surface = pygame.Surface((SCREEN_WIDTH, SCREEN_HEIGHT * 2/4))
+    trans_surface.fill((128, 128, 128))
+    trans_surface.set_alpha(128)
+    screen.blit(trans_surface, (0, 170))
+    while (temp_rect_1_size < rect_1_size or temp_rect_2_size < rect_2_size):
+        if (temp_rect_1_size < rect_1_size):
+            temp_rect_1_size += 1
+        if (temp_rect_2_size < rect_2_size):
+            temp_rect_2_size += 1
 
-def check_invert_choice(random_country_data1, random_country_data2, i, choice):
-   if choice == 1 and random_country_data1 < random_country_data2:
-       print("Youre right!", random_country_data1, random_country_data2)
-   elif choice == 2 and random_country_data1 > random_country_data2:
-       print("Youre right!", random_country_data1, random_country_data2)
-   elif random_country_data2 == random_country_data1:
-       print("Both are equals!")
-   else:
-       print("Rip bozo youre wrong!, Youre streak is:", i, random_country_data1, random_country_data2)
-       exit()
+        rect_1 = pygame.Rect(0,                - 100 + (SCREEN_HEIGHT * 3/4 - temp_rect_1_size + 1), SCREEN_WIDTH / 2, temp_rect_1_size)
+        rect_2 = pygame.Rect(SCREEN_WIDTH/2, - 100 + (SCREEN_HEIGHT * 3/4 - temp_rect_2_size + 1), SCREEN_WIDTH / 2, temp_rect_2_size)
+
+        pygame.draw.rect(screen, (0, 0, 0), rect_2)
+        pygame.draw.rect(screen, (0, 0, 0), rect_1)
+        pygame.display.flip()
+    answer_1 = my_font.render(str(random_country_data1), False, (255, 255, 255))
+    answer_2 = my_font.render(str(random_country_data2), False, (255, 255, 255))
+    answer_1_rect = answer_1.get_rect(center=(SCREEN_WIDTH/4, SCREEN_HEIGHT/2 - 100))
+    answer_2_rect = answer_2.get_rect(center=(SCREEN_WIDTH/4 * 3, SCREEN_HEIGHT/2 - 100))
+
+    if (choice == 2 and correct == True) or (choice == 1 and correct == False):
+        pygame.draw.rect(screen, (255, 0, 0), rect_1)
+        pygame.draw.rect(screen, (0, 255, 0), rect_2)
+    elif (choice == 2 and correct == False) or (choice == 1 and correct == True):
+        pygame.draw.rect(screen, (0, 255, 0), rect_1)
+        pygame.draw.rect(screen, (255, 0, 0), rect_2)
+    else:
+        pygame.draw.rect(screen, (0, 0, 255), rect_1)
+        pygame.draw.rect(screen, (0, 0, 255), rect_2)
+    draw_rounded_rect(screen, answer_1_rect, (20, 20, 20), 10)
+    draw_rounded_rect(screen, answer_2_rect, (20, 20, 20), 10)
+    screen.blit(answer_1, answer_1_rect)
+    screen.blit(answer_2, answer_2_rect)
+    screen.blit(answer, answer_rect)
+    pygame.display.flip()
+    time.sleep(1)
+
+def check_choice(random_country_data1, random_country_data2, i, choice, screen):
+
+    if choice == 1 and random_country_data1 > random_country_data2:
+        guess("Youre right!", screen, (0, 255, 0), random_country_data1, random_country_data2, choice, 1)
+    elif choice == 2 and random_country_data1 < random_country_data2:
+        guess("Youre right!", screen, (0, 255, 0), random_country_data1, random_country_data2, choice, 1)
+    elif random_country_data2 == random_country_data1:
+        guess("Both are equals!", screen, (0, 0, 255), random_country_data1, random_country_data2, choice, 2)
+    else:
+        guess(f"Rip bozo youre wrong!, Youre streak is: {i - 1}", screen, (255, 0, 0), random_country_data1, random_country_data2, choice, 0)
+        return 0
+    return i
+
+def check_invert_choice(random_country_data1, random_country_data2, i, choice, screen):
+
+    if choice == 1 and random_country_data1 < random_country_data2:
+        guess("You're right!", screen, (0, 255, 0), random_country_data1, random_country_data2, choice, 1)
+    elif choice == 2 and random_country_data1 > random_country_data2:
+        guess("You're right!", screen, (0, 255, 0), random_country_data1, random_country_data2, choice, 1)
+    elif random_country_data2 == random_country_data1:
+        guess("Both are equals!", screen, (0, 0, 255), random_country_data1, random_country_data2, choice, 2)
+    else:
+        guess(f"Rip bozo youre wrong!, Youre streak is: {i - 1}", screen, (255, 0, 0), random_country_data1, random_country_data2, choice, 0)
+        return 0
+    return i
 
 def loop(my_font, country_dict):
    pygame.init()
@@ -86,15 +150,15 @@ def loop(my_font, country_dict):
             if (answer1_pic_rect.collidepoint(event.pos)):
                new = True
                if Config.INVERT[random_field]:
-                  check_invert_choice(random_country_data1, random_country_data2, i, 1)
+                  i = check_invert_choice(random_country_data1, random_country_data2, i, 1, screen)
                else:
-                  check_choice(random_country_data1, random_country_data2, i, 1)
+                  i = check_choice(random_country_data1, random_country_data2, i, 1, screen)
             if (answer2_pic_rect.collidepoint(event.pos)):
                new = True
                if Config.INVERT[random_field]:
-                  check_invert_choice(random_country_data1, random_country_data2, i, 2)
+                  i = check_invert_choice(random_country_data1, random_country_data2, i, 2, screen)
                else:
-                  check_choice(random_country_data1, random_country_data2, i, 2)
+                  i = check_choice(random_country_data1, random_country_data2, i, 2, screen)
 
       if (new == False):
          continue
@@ -160,9 +224,9 @@ def loop(my_font, country_dict):
 for data in Config.DATAS:
    data_dict[data] = csv_to_dict("Datasets/" + data + ".csv", "country", "score")
 
-pygame.font.init() # you have to call this at the start, 
+pygame.font.init() # you have to call this at the start,
                    # if you want to use this module.
-my_font = pygame.font.SysFont('Comic Sans MS', 30)
+my_font = pygame.font.SysFont('Assets/Dosis-Bold.ttf', 50)
 country_dict = csv_to_dict_spe("Datasets/Countries.csv", "c1", "c2")
 
 loop(my_font, country_dict)
