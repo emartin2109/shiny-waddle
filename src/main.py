@@ -125,12 +125,50 @@ def check_invert_choice(random_country_data1, random_country_data2, i, choice, s
         return 0
     return i
 
+def main_menu(screen, streak):
+   start_rect = pygame.Rect(250, 700, 500, 150)
+   quit_rect = pygame.Rect(1200, 700, 500, 150)
+      
+   while (True):
+      for event in pygame.event.get():
+         if event.type == pygame.QUIT:
+            return False
+         if event.type == pygame.MOUSEBUTTONDOWN:
+            if (start_rect.collidepoint(event.pos)):
+               return True
+            if (quit_rect.collidepoint(event.pos)):
+               return False
+      
+      screen.fill((20, 20, 20))
+      pygame.draw.rect(screen, (255, 255, 255), start_rect)
+      start_text = my_font = pygame.font.SysFont('Assets/Dosis-Bold.ttf', 100).render("START", False, (0,0,0))
+      start_text_rect = start_text.get_rect(center=(500, 780))
+      screen.blit(start_text, start_text_rect)
+      pygame.draw.rect(screen, (255, 255, 255), quit_rect)
+      quit_text = my_font = pygame.font.SysFont('Assets/Dosis-Bold.ttf', 100).render("QUIT", False, (0,0,0))
+      quit_text_rect = quit_text.get_rect(center=(1450, 780))
+      screen.blit(quit_text, quit_text_rect)
+      
+      home_text = my_font = pygame.font.SysFont('Assets/Dosis-Bold.ttf', 100).render("Welcome to Randle", False, (255,255,255))
+      home_text_rect = home_text.get_rect(center=(SCREEN_WIDTH / 2, 200))
+      screen.blit(home_text, home_text_rect)
+      Title_text = my_font = pygame.font.SysFont('Assets/Dosis-Bold.ttf', 100).render("Make your choice beetween countries info", False, (255,255,255))
+      Title_text_rect = Title_text.get_rect(center=(SCREEN_WIDTH / 2, 350))
+      screen.blit(Title_text, Title_text_rect)
+      Streak_text = my_font = pygame.font.SysFont('Assets/Dosis-Bold.ttf', 100).render("Your best streak is " + str(streak), False, (255,255,255))
+      Streak_text_rect = Streak_text.get_rect(center=(SCREEN_WIDTH / 2, 500))
+      screen.blit(Streak_text, Streak_text_rect)
+
+      pygame.display.flip()
+   
+
 def loop(my_font, country_dict):
    pygame.init()
    screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
    clock = pygame.time.Clock()
    running = True
    new = True
+   best_streak = 0
    i = 0
 
    random_field = None
@@ -142,6 +180,7 @@ def loop(my_font, country_dict):
    answer2_pic_rect = None
 
    while running:
+
       for event in pygame.event.get():
          if event.type == pygame.QUIT:
             running = False
@@ -159,6 +198,12 @@ def loop(my_font, country_dict):
                   i = check_invert_choice(random_country_data1, random_country_data2, i, 2, screen)
                else:
                   i = check_choice(random_country_data1, random_country_data2, i, 2, screen)
+
+      if (i - 1 > best_streak):
+         best_streak = i - 1
+
+      if (i == 0):
+         running = main_menu(screen, best_streak)
 
       if (new == False):
          continue
