@@ -8,12 +8,12 @@ import time
 from config import Config
 
 data_dict = {}
+inverted_data_dict = {}
 SCREEN_WIDTH = 1920
 SCREEN_HEIGHT = 1080
 
 def csv_to_dict(csv_file_path, key_column, value_column):
    result_dict = {}
-   print(csv_file_path)
 
    with open(csv_file_path, 'r', newline='') as file:
       csv_reader = csv.DictReader(file)
@@ -28,7 +28,6 @@ def csv_to_dict(csv_file_path, key_column, value_column):
 
 def csv_to_dict_spe(csv_file_path, key_column, value_column):
    result_dict = {}
-   print(csv_file_path)
 
    with open(csv_file_path, 'r', newline='') as file:
       csv_reader = csv.DictReader(file)
@@ -51,6 +50,16 @@ def draw_rounded_rect(surface, rect, color, corner_radius):
     pygame.gfxdraw.filled_circle(surface, rect.left+corner_radius, rect.bottom-corner_radius-1, corner_radius, color)
     pygame.gfxdraw.aacircle(surface, rect.right-corner_radius-1, rect.bottom-corner_radius-1, corner_radius, color)
     pygame.gfxdraw.filled_circle(surface, rect.right-corner_radius-1, rect.bottom-corner_radius-1, corner_radius, color)
+
+def create_inverted_data_dict(data_dict):
+   inverted_data_dict = {}
+   for field, field_data in data_dict.items():
+      for key, value in field_data.items():
+         if key not in inverted_data_dict:
+            inverted_data_dict[key] = {}
+         inverted_data_dict[key][field] = value
+   return inverted_data_dict
+
 
 def guess(text, screen, color, random_country_data1, random_country_data2, choice, correct):
     answer = my_font.render(text, False, color)
@@ -173,7 +182,7 @@ def loop(my_font, country_dict):
 
    random_field = None
    random_country_name1 = None
-   random_country_name2 = None
+   random_country_name2 = random.choice(list(inverted_data_dict.keys()))
    random_country_data1 = None
    random_country_data2 = None
    answer1_pic_rect = None
@@ -208,14 +217,17 @@ def loop(my_font, country_dict):
       if (new == False):
          continue
 
-      try:
-         random_field = random.choice(Config.DATAS)
-         random_country_name1, random_country_data1 = random.choice(list(data_dict[random_field].items()))
-         random_country_name2, random_country_data2 = random.choice(list(data_dict[random_field].items()))
-         country_dict[random_country_name1]
-         country_dict[random_country_name2]
-      except Exception:
-         continue
+      while(True):
+         try:
+            random_country = random.choice(list(inverted_data_dict.keys()))
+            random_field = random.choice(list(inverted_data_dict[random_country].keys()))
+            random_country_name1, random_country_data1 = random_country_name2, data_dict[random_field][random_country]
+            random_country_name2, random_country_data2 = random.choice(list(data_dict[random_field].items()))
+            country_dict[random_country_name1]
+            country_dict[random_country_name2]
+            break
+         except Exception as e:
+            continue
 
       screen.fill((20, 20, 20))
       question = my_font.render("Which has more " + random_field + " ?", False, (255, 255, 255))
@@ -268,6 +280,7 @@ def loop(my_font, country_dict):
 
 for data in Config.DATAS:
    data_dict[data] = csv_to_dict("Datasets/" + data + ".csv", "country", "score")
+inverted_data_dict = create_inverted_data_dict(data_dict)
 
 pygame.font.init() # you have to call this at the start,
                    # if you want to use this module.
