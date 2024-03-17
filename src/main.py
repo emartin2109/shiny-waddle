@@ -219,9 +219,8 @@ def loop(my_font, country_dict):
 
       while(True):
          try:
-            random_country = random.choice(list(inverted_data_dict.keys()))
-            random_field = random.choice(list(inverted_data_dict[random_country].keys()))
-            random_country_name1, random_country_data1 = random_country_name2, data_dict[random_field][random_country]
+            random_field = random.choice(list(inverted_data_dict[random_country_name2].keys()))
+            random_country_name1, random_country_data1 = random_country_name2, data_dict[random_field][random_country_name2]
             random_country_name2, random_country_data2 = random.choice(list(data_dict[random_field].items()))
             country_dict[random_country_name1]
             country_dict[random_country_name2]
