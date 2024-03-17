@@ -61,7 +61,7 @@ def create_inverted_data_dict(data_dict):
    return inverted_data_dict
 
 
-def guess(text, screen, color, random_country_data1, random_country_data2, choice, correct):
+def guess(text, screen, color, random_country_data1, random_country_data2, choice, correct, inversed):
     answer = my_font.render(text, False, color)
     answer_rect = answer.get_rect(center=(SCREEN_WIDTH/2, SCREEN_HEIGHT * 3/4 + 100))
     rect_1 = pygame.Rect(0, 0, 0, 0)
@@ -74,7 +74,10 @@ def guess(text, screen, color, random_country_data1, random_country_data2, choic
     trans_surface.fill((128, 128, 128))
     trans_surface.set_alpha(128)
     screen.blit(trans_surface, (0, 170))
-    while (temp_rect_1_size < rect_1_size or temp_rect_2_size < rect_2_size):
+    if inversed:
+        rect_1_size, rect_2_size = rect_2_size, rect_1_size
+        random_country_data1, random_country_data2 = random_country_data2, random_country_data1
+    while ((temp_rect_1_size < rect_1_size or temp_rect_2_size < rect_2_size) and (temp_rect_1_size < SCREEN_HEIGHT/2 and temp_rect_2_size < SCREEN_HEIGHT/2)):
         if (temp_rect_1_size < rect_1_size):
             temp_rect_1_size += 1
         if (temp_rect_2_size < rect_2_size):
@@ -111,33 +114,33 @@ def guess(text, screen, color, random_country_data1, random_country_data2, choic
 def check_choice(random_country_data1, random_country_data2, i, choice, screen):
 
     if choice == 1 and random_country_data1 > random_country_data2:
-        guess("Youre right!", screen, (0, 255, 0), random_country_data1, random_country_data2, choice, 1)
+        guess("Youre right!", screen, (0, 255, 0), random_country_data1, random_country_data2, choice, 1, False)
     elif choice == 2 and random_country_data1 < random_country_data2:
-        guess("Youre right!", screen, (0, 255, 0), random_country_data1, random_country_data2, choice, 1)
+        guess("Youre right!", screen, (0, 255, 0), random_country_data1, random_country_data2, choice, 1, False)
     elif random_country_data2 == random_country_data1:
-        guess("Both are equals!", screen, (0, 0, 255), random_country_data1, random_country_data2, choice, 2)
+        guess("Both are equals!", screen, (0, 0, 255), random_country_data1, random_country_data2, choice, 2, False)
     else:
-        guess(f"Rip bozo youre wrong!, Youre streak is: {i - 1}", screen, (255, 0, 0), random_country_data1, random_country_data2, choice, 0)
+        guess(f"Rip bozo youre wrong!, Youre streak is: {i - 1}", screen, (255, 0, 0), random_country_data1, random_country_data2, choice, 0, False)
         return 0
     return i
 
 def check_invert_choice(random_country_data1, random_country_data2, i, choice, screen):
 
     if choice == 1 and random_country_data1 < random_country_data2:
-        guess("You're right!", screen, (0, 255, 0), random_country_data1, random_country_data2, choice, 1)
+        guess("You're right!", screen, (0, 255, 0), random_country_data1, random_country_data2, choice, 1, True)
     elif choice == 2 and random_country_data1 > random_country_data2:
-        guess("You're right!", screen, (0, 255, 0), random_country_data1, random_country_data2, choice, 1)
+        guess("You're right!", screen, (0, 255, 0), random_country_data1, random_country_data2, choice, 1, True)
     elif random_country_data2 == random_country_data1:
-        guess("Both are equals!", screen, (0, 0, 255), random_country_data1, random_country_data2, choice, 2)
+        guess("Both are equals!", screen, (0, 0, 255), random_country_data1, random_country_data2, choice, 2, True)
     else:
-        guess(f"Rip bozo youre wrong!, Youre streak is: {i - 1}", screen, (255, 0, 0), random_country_data1, random_country_data2, choice, 0)
+        guess(f"Rip bozo youre wrong!, Youre streak is: {i - 1}", screen, (255, 0, 0), random_country_data1, random_country_data2, choice, 0, True)
         return 0
     return i
 
 def main_menu(screen, streak):
    start_rect = pygame.Rect(250, 700, 500, 150)
    quit_rect = pygame.Rect(1200, 700, 500, 150)
-      
+
    while (True):
       for event in pygame.event.get():
          if event.type == pygame.QUIT:
@@ -147,7 +150,7 @@ def main_menu(screen, streak):
                return True
             if (quit_rect.collidepoint(event.pos)):
                return False
-      
+
       screen.fill((20, 20, 20))
       pygame.draw.rect(screen, (255, 255, 255), start_rect)
       start_text = my_font = pygame.font.SysFont('Assets/Dosis-Bold.ttf', 100).render("START", False, (0,0,0))
@@ -157,7 +160,7 @@ def main_menu(screen, streak):
       quit_text = my_font = pygame.font.SysFont('Assets/Dosis-Bold.ttf', 100).render("QUIT", False, (0,0,0))
       quit_text_rect = quit_text.get_rect(center=(1450, 780))
       screen.blit(quit_text, quit_text_rect)
-      
+
       home_text = my_font = pygame.font.SysFont('Assets/Dosis-Bold.ttf', 100).render("Welcome to Randle", False, (255,255,255))
       home_text_rect = home_text.get_rect(center=(SCREEN_WIDTH / 2, 200))
       screen.blit(home_text, home_text_rect)
@@ -169,7 +172,7 @@ def main_menu(screen, streak):
       screen.blit(Streak_text, Streak_text_rect)
 
       pygame.display.flip()
-   
+
 
 def loop(my_font, country_dict):
    pygame.init()
