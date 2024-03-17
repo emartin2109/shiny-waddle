@@ -27,7 +27,7 @@ Croatia,9.64
 Cyprus,9.59
 Australia,9.51
 Seychelles,9.48
-Bahamas, The,9.48
+Bahamas,9.48
 Switzerland,9.41
 Saint Lucia,9.3
 New Zealand,9.17
@@ -46,7 +46,7 @@ Canada,8
 Argentina,7.95
 Tanzania,7.81
 Chile,7.8
-Korea, South,7.74
+South Korea,7.74
 Iceland,7.72
 Eswatini,7.68
 Italy,7.65
@@ -73,7 +73,7 @@ Botswana,5.98
 Belize,5.93
 Angola,5.84
 Trinidad and Tobago,5.81
-Congo, Republic of the,5.74
+Republic of Congo,5.74
 Peru,5.74
 Ukraine,5.69
 Dominican Republic,5.56
@@ -100,7 +100,7 @@ Zambia,3.82
 Armenia,3.77
 Kazakhstan,3.73
 Nicaragua,3.69
-Korea, North,3.61
+North Korea,3.61
 Lesotho,3.56
 Jamaica,3.46
 Vietnam,3.41
@@ -119,7 +119,7 @@ Turkmenistan,2.88
 Haiti,2.85
 Honduras,2.73
 Fiji,2.71
-Gambia, The,2.67
+Gambia,2.67
 Sri Lanka,2.58
 Venezuela,2.51
 Uzbekistan,2.45
@@ -136,7 +136,7 @@ Kenya,1.68
 Guatemala,1.63
 Vanuatu,1.6
 Ghana,1.59
-Micronesia, Federated States of,1.59
+Micronesia,1.59
 Tunisia,1.51
 Mozambique,1.46
 Togo,1.4
@@ -159,7 +159,7 @@ Brunei,0.69
 Malaysia,0.64
 Mali,0.6
 Algeria,0.59
-Congo, Democratic Republic of the,0.56
+Democratic Republic of Congo,0.56
 Chad,0.55
 Morocco,0.51
 Oman,0.47

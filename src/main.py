@@ -18,32 +18,47 @@ def csv_to_dict(csv_file_path, key_column, value_column):
 
       for row in csv_reader:
          key = row[key_column]
-         value = row[value_column]
+         value = float(row[value_column])
+         
+         result_dict[key] = value
 
+   return result_dict
+
+def csv_to_dict_spe(csv_file_path, key_column, value_column):
+   result_dict = {}
+   print(csv_file_path)
+
+   with open(csv_file_path, 'r', newline='') as file:
+      csv_reader = csv.DictReader(file)
+
+      for row in csv_reader:
+         key = row[key_column]
+         value = row[value_column]
+         
          result_dict[key] = value
 
    return result_dict
 
 def check_choice(random_country_data1, random_country_data2, i, choice):
    if choice == 1 and random_country_data1 > random_country_data2:
-       print("Youre right!")
+       print("Youre right!", random_country_data1, random_country_data2)
    elif choice == 2 and random_country_data1 < random_country_data2:
-       print("Youre right!")
+       print("Youre right!", random_country_data1, random_country_data2)
    elif random_country_data2 == random_country_data1:
        print("Both are equals!")
    else:
-       print("Rip bozo youre wrong!, Youre streak is:", i)
+       print("Rip bozo youre wrong!, Youre streak is:", i, random_country_data1, random_country_data2)
        exit()
 
 def check_invert_choice(random_country_data1, random_country_data2, i, choice):
    if choice == 1 and random_country_data1 < random_country_data2:
-       print("Youre right!")
+       print("Youre right!", random_country_data1, random_country_data2)
    elif choice == 2 and random_country_data1 > random_country_data2:
-       print("Youre right!")
+       print("Youre right!", random_country_data1, random_country_data2)
    elif random_country_data2 == random_country_data1:
        print("Both are equals!")
    else:
-       print("Rip bozo youre wrong!, Youre streak is:", i)
+       print("Rip bozo youre wrong!, Youre streak is:", i, random_country_data1, random_country_data2)
        exit()
 
 def loop(my_font, country_dict):
@@ -94,7 +109,7 @@ def loop(my_font, country_dict):
          continue
 
       screen.fill((20, 20, 20))
-      question = my_font.render("Wich has more " + random_field + " ?", False, (255, 255, 255))
+      question = my_font.render("Which has more " + random_field + " ?", False, (255, 255, 255))
       answer1 = my_font.render("1- " + random_country_name1, False, (255, 255, 255))
       answer2 = my_font.render("2- " + random_country_name2, False, (255, 255, 255))
 
@@ -145,9 +160,9 @@ def loop(my_font, country_dict):
 for data in Config.DATAS:
    data_dict[data] = csv_to_dict("Datasets/" + data + ".csv", "country", "score")
 
-pygame.font.init() # you have to call this at the start,
+pygame.font.init() # you have to call this at the start, 
                    # if you want to use this module.
-my_font = pygame.font.Font('Assets/Dosis-Bold.ttf', 50)
-country_dict = csv_to_dict("Datasets/Countries.csv", "c1", "c2")
+my_font = pygame.font.SysFont('Comic Sans MS', 30)
+country_dict = csv_to_dict_spe("Datasets/Countries.csv", "c1", "c2")
 
 loop(my_font, country_dict)
