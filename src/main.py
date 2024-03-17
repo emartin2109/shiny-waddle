@@ -176,7 +176,8 @@ def main_menu(screen, streak):
 
 def loop(my_font, country_dict):
    pygame.init()
-   screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+   infoObject = pygame.display.Info()
+   screen = pygame.display.set_mode((infoObject.current_w, infoObject.current_h), pygame.FULLSCREEN)
    clock = pygame.time.Clock()
    running = True
    new = True
