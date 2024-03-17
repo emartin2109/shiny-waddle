@@ -8,6 +8,7 @@ You need to find the secret country name by guessing other countries. Each time 
 
 ## How to run
 - go to the project folder
+- install the dependencies with the following command: "pip install -r requirements.txt"
 - run the following command: "python src/main.py"
 
 
