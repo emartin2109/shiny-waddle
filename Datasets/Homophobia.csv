@@ -54,9 +54,9 @@ Venezuela,99
 Cameroon,25
 Niger,30
 Australia,138
-Syria,null
+Syria,0
 Mali,64
-Taiwan,null
+Taiwan,0
 Burkina Faso,54
 Sri Lanka,70
 Malawi,15
@@ -65,7 +65,7 @@ Kazakhstan,73
 Chile,127
 Romania,124
 Chad,11
-Somalia,null
+Somalia,0
 Ecuador,131
 Guatemala,110
 Senegal,12
@@ -83,7 +83,7 @@ Belgium,152
 Dominican Republic,102
 Jordan,42
 South Sudan,4
-Cuba,null
+Cuba,0
 Honduras,111
 Sweden,158
 Papua New Guinea,39
@@ -118,7 +118,7 @@ Slovakia,129
 Finland,153
 Liberia,33
 Norway,155
-Palestine,null
+Palestine,0
 New Zealand,147
 Costa Rica,123
 Lebanon,56
@@ -133,7 +133,7 @@ Georgia,85
 Mongolia,90
 Uruguay,150
 Moldova,88
-Puerto Rico,null
+Puerto Rico,0
 Bosnia and Herzegovina,98
 Gambia,22
 Albania,103
@@ -149,7 +149,7 @@ Guinea-Bissau,38
 Slovenia,144
 North Macedonia,96
 Latvia,106
-Equatorial Guinea,null
+Equatorial Guinea,0
 Bahrain,93
 Timor-Leste,87
 Estonia,119
@@ -157,43 +157,43 @@ Mauritius,92
 Cyprus,122
 Eswatini,48
 Djibouti,77
-Fiji,null
+Fiji,0
 Comoros,36
 Guyana,63
-Bhutan,null
-Solomon Islands,null
-Macau,null
-Luxembourg,null
+Bhutan,0
+Solomon Islands,0
+Macau,0
+Luxembourg,0
 Suriname,67
-Montenegro,null
+Montenegro,0
 Malta,145
-Maldives,null
-Brunei,null
-Belize,null
+Maldives,0
+Brunei,0
+Belize,0
 Bahamas,107
-Iceland,null
+Iceland,0
 Barbados,86
-Samoa,null
-Curacao,null
-Saint Lucia,null
-Guam,null
-Kiribati,null
-Grenada,null
-Micronesia,null
-Tonga,null
-Seychelles,null
-Aruba,null
-Andorra,null
-Dominica,null
-Cayman Islands,null
-Northern Mariana Islands,null
-Saint Kitts and Nevis,null
-Sint Maarten,null
-Marshall Islands,null
-Liechtenstein,null
-Monaco,null
-San Marino,null
-Palau,null
-Cook Islands,null
-Nauru,null
-Tuvalu,null
+Samoa,0
+Curacao,0
+Saint Lucia,0
+Guam,0
+Kiribati,0
+Grenada,0
+Micronesia,0
+Tonga,0
+Seychelles,0
+Aruba,0
+Andorra,0
+Dominica,0
+Cayman Islands,0
+Northern Mariana Islands,0
+Saint Kitts and Nevis,0
+Sint Maarten,0
+Marshall Islands,0
+Liechtenstein,0
+Monaco,0
+San Marino,0
+Palau,0
+Cook Islands,0
+Nauru,0
+Tuvalu,0

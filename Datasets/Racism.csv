@@ -3,8 +3,8 @@ India,66
 China,57
 United States,73
 Indonesia,37
-Pakistan,null
-Nigeria,null
+Pakistan,0
+Nigeria,0
 Brazil,20
 Bangladesh,75
 Russia,80
@@ -26,7 +26,7 @@ Myanmar,82
 Colombia,54
 South Korea,60
 Spain,21
-Iraq,null
+Iraq,0
 Algeria,59
 Argentina,22
 Poland,25
@@ -35,7 +35,7 @@ Morocco,38
 Ukraine,49
 Saudi Arabia,85
 Uzbekistan,71
-Yemen,null
+Yemen,0
 Ghana,33
 Peru,43
 Malaysia,48
@@ -66,10 +66,10 @@ Belarus,77
 Israel,83
 Austria,11
 Switzerland,6
-Hong Kong,null
+Hong Kong,0
 Serbia,87
-Libya,null
-Kyrgyzstan,null
+Libya,0
+Kyrgyzstan,0
 Bulgaria,29
 El Salvador,79
 Singapore,19
@@ -77,14 +77,14 @@ Denmark,7
 Slovakia,46
 Finland,9
 Norway,5
-Palestine,null
+Palestine,0
 New Zealand,1
 Costa Rica,28
 Lebanon,72
 Ireland,10
 Oman,35
 Panama,52
-Kuwait,null
+Kuwait,0
 Croatia,62
 Uruguay,74
 Qatar,86

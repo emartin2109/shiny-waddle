@@ -1,4 +1,4 @@
-country, score
+country,score
 United States,23.52
 United Kingdom,54.47
 Japan,19.22
@@ -43,7 +43,7 @@ Mauritius,292.65
 Qatar,47.91
 Taiwan,3.56
 Colombia,33.33
-Puerto Rico (United States),null
+Puerto Rico (United States),0
 Egypt,13.21
 Kazakhstan,22.36
 Romania,23.69
@@ -54,7 +54,7 @@ Pakistan,18.29
 Ukraine,18.26
 Denmark,6.58
 Slovakia,44.81
-Venezuela,null
+Venezuela,0
 Malta,179.31
 Bangladesh,8.92
 Algeria,27.88
@@ -62,7 +62,7 @@ Nigeria,13.79
 Morocco,26.25
 Peru,16.63
 Sri Lanka,23.15
-Iraq,null
+Iraq,0
 Sudan,283.64
 Slovenia,32.29
 Ecuador,22.55
@@ -80,12 +80,12 @@ Belarus,14.75
 Lebanon,10
 Estonia,41.71
 Mongolia,225.33
-Uzbekistan,null
-Ivory Coast,null
+Uzbekistan,0
+Ivory Coast,0
 Ghana,26.07
 Lithuania,19.39
-Cuba,null
-Dominican Republic,null
+Cuba,0
+Dominican Republic,0
 Ethiopia,19.77
 Cyprus,23.3
 Costa Rica,11.8
@@ -96,14 +96,14 @@ Iceland,16.9
 Paraguay,32.06
 Trinidad & Tobago,42.16
 Bulgaria,8.14
-Guatemala,null
-Palau,null
+Guatemala,0
+Palau,0
 Bahamas,110
 Jamaica,37.33
-Monaco,null
+Monaco,0
 Tanzania,10.97
 Bolivia,14.76
-El Salvador,null
+El Salvador,0
 Albania,18.18
 Myanmar,4.91
 Nicaragua,16.09
@@ -115,10 +115,10 @@ Nepal,10.14
 Zambia,33.04
 Iran,0.29
 Azerbaijan,5.18
-Honduras,null
-North Macedonia,null
+Honduras,0
+North Macedonia,0
 Cameroon,16.04
-Yemen,null
+Yemen,0
 Armenia,14.17
 Tajikistan,26.64
 Namibia,21.03
@@ -130,31 +130,31 @@ Moldova,8.69
 Democratic Republic of the Congo,7.51
 Gabon,22.43
 Bosnia and Herzegovina,5.79
-North Korea,null
+North Korea,0
 Republic of the Congo,80.33
 Barbados,28.06
 Montenegro,12.19
 Madagascar,13.37
-Kosovo,null
+Kosovo,0
 Mali,16.5
 Mauritania,59.83
 Libya,8.02
 Botswana,12.96
 Burkina Faso,19.31
-Somalia,null
+Somalia,0
 Niger,21
 Seychelles,63.75
 Rwanda,8.71
-Bermuda (UK),null
+Bermuda (UK),0
 Benin,15.6
-Bhutan,null
+Bhutan,0
 Haiti,40.4
 Malawi,8.73
-South Sudan,null
+South Sudan,0
 Chad,18.8
-Cape Verde,null
+Cape Verde,0
 Sierra Leone,39
-Palestine,null
+Palestine,0
 Equatorial Guinea,6.8
 Djibouti,67
 Guinea,7.39
@@ -163,49 +163,49 @@ Afghanistan,3.12
 Suriname,62
 Togo,19.5
 Guyana,19
-Andorra,null
+Andorra,0
 Liberia,7.93
 Guinea-Bissau,55
 Lesotho,47.45
-Faroe Islands (Denmark),null
+Faroe Islands (Denmark),0
 Fiji,6.94
 Eritrea,16.4
 Maldives,7.42
 Burundi,17.63
-Aruba,null
+Aruba,0
 Central African Republic,34.35
 Kuwait,0.12
-Grenada,null
+Grenada,0
 Gambia,18.07
-Saint Lucia,null
+Saint Lucia,0
 Turkmenistan,0.64
-Solomon Islands,null
-Eswatini,null
-Samoa,null
-Antigua and Barbuda,null
-San Marino,null
+Solomon Islands,0
+Eswatini,0
+Samoa,0
+Antigua and Barbuda,0
+San Marino,0
 Brunei,2.83
-Saint Vincent and the Grenadines,null
+Saint Vincent and the Grenadines,0
 Timor-Leste,7.8
-Dominica,null
-Cook Islands,null
-Sao Tome and Principe,null
-Tonga,null
-Vanuatu,null
-Saint Kitts and Nevis,null
+Dominica,0
+Cook Islands,0
+Sao Tome and Principe,0
+Tonga,0
+Vanuatu,0
+Saint Kitts and Nevis,0
 Comoros,6.65
-New Caledonia (France),null
-Marshall Islands,null
-Micronesia,null
-Cayman Islands (UK),null
+New Caledonia (France),0
+Marshall Islands,0
+Micronesia,0
+Cayman Islands (UK),0
 Kenya,0.02
-Greenland (Denmark),null
-Nauru,null
-British Virgin Islands (UK),null
-Tuvalu,null
-Kiribati,null
-Anguilla (UK),null
-Wallis and Futuna (France),null
-Montserrat (UK),null
-Liechtenstein,null
-Niue (New Zealand),null
+Greenland (Denmark),0
+Nauru,0
+British Virgin Islands (UK),0
+Tuvalu,0
+Kiribati,0
+Anguilla (UK),0
+Wallis and Futuna (France),0
+Montserrat (UK),0
+Liechtenstein,0
+Niue (New Zealand),0
