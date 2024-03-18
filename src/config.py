@@ -1,3 +1,3 @@
 class Config:
-    DATAS=["Corruption", "Obesity", "Abortion", "Alcohol", "Religioussness", "Crimes", "Drugs", "Education", "Guns", "Happiness", "IQ", "Latitude", "Murders", "Obesity", "Population", "Terrorism"]
-    INVERT={"Corruption": True, "Obesity": False, "Abortion": False, "Alcohol" : False, "Religioussness": True, "Crimes": False, "Drugs": False, "Education": False, "Guns": False, "Happiness": False, "IQ": False, "Latitude":False, "Murders": False, "Obesity": False, "Population": False, "Population": False, "Terrorism": False}
+    DATAS=["Corruption", "Obesity", "Abortion", "Alcohol", "Religioussness", "Hate crimes", "Drugs", "Education", "Guns", "Happiness", "IQ", "Latitude", "Murders", "Obesity", "Population", "Terrorism"]
+    INVERT={"Corruption": True, "Obesity": False, "Abortion": False, "Alcohol" : False, "Religioussness": True, "Hate crimes": False, "Drugs": False, "Education": False, "Guns": False, "Happiness": False, "IQ": False, "Latitude":False, "Murders": False, "Obesity": False, "Population": False, "Population": False, "Terrorism": False}
