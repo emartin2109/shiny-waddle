@@ -33,17 +33,17 @@ The random datasets are:
 - Alcohol Consumption
 - Happiness
 - Corruption
-- Crimes
+- Hate crimes
 - Murder
 - Atheism
 - Terrorism
 - Guns
 - Obesity
-- Depression
 - Suicide
+- Mysogynia
+- Prostitution
 - Depts
+- Depression
 - Racism
 - Homophobia
-- Mysogynia
-- Sex selling prices
 - War crimes
